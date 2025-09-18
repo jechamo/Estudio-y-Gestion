@@ -5,23 +5,44 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainMenu = document.getElementById('main-menu');
 
     if (menuToggle && mainMenu) {
-        menuToggle.addEventListener('click', function() {
-            mainMenu.classList.toggle('active');
-            // Animación del botón hamburguesa
-            this.classList.toggle('is-active'); 
+        // Evento para abrir/cerrar con el botón
+        menuToggle.addEventListener('click', function(event) {
+            const isActive = mainMenu.classList.toggle('active');
+            menuToggle.classList.toggle('is-active');
+            menuToggle.setAttribute('aria-expanded', isActive);
+            
+            // Detiene la propagación para que el evento 'document' no lo cierre inmediatamente
+            event.stopPropagation(); 
+        });
+
+        // Evento para cerrar el menú al hacer clic en un enlace
+        const menuLinks = mainMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mainMenu.classList.contains('active')) {
+                    mainMenu.classList.remove('active');
+                    menuToggle.classList.remove('is-active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
         });
     }
+    
+    // --- Evento para cerrar el menú al hacer clic fuera ---
+    document.addEventListener('click', function(event) {
+        if (mainMenu && mainMenu.classList.contains('active')) {
+            // Comprueba si el clic fue FUERA del menú y FUERA del botón
+            const isClickInsideMenu = mainMenu.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
 
-    // --- Cerrar menú al hacer clic en un enlace (para SPAs o páginas con anclas) ---
-    const menuLinks = document.querySelectorAll('#main-menu a');
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (mainMenu.classList.contains('active')) {
+            if (!isClickInsideMenu && !isClickOnToggle) {
                 mainMenu.classList.remove('active');
                 menuToggle.classList.remove('is-active');
+                menuToggle.setAttribute('aria-expanded', 'false');
             }
-        });
+        }
     });
+
 
     // --- Año actual en el footer ---
     const yearSpan = document.getElementById('current-year');

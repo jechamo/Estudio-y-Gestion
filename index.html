@@ -11,197 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="https://placehold.co/32x32/C00000/FFFFFF?text=eg" type="image/png">
-    <style>
-        /* Estilos para la nueva cabecera */
-        .main-header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap; /* Para una mejor respuesta en pantallas pequeñas */
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-            margin-right: 15px; /* Espacio entre el icono y el texto */
-        }
-
-        .logo .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
-            color: #333;
-            white-space: nowrap; /* Evita que el texto se rompa */
-        }
-
-        .whatsapp-header-icon {
-            font-size: 2.2rem;
-            color: #25D366; /* Color verde de WhatsApp */
-            transition: transform 0.3s ease;
-            margin-left: 20px; /* Espacio entre la navegación y el icono */
-        }
-
-        .whatsapp-header-icon:hover {
-            transform: scale(1.1);
-        }
-
-        /* Estilo para la imagen de fondo de la sección hero */
-        .hero-section {
-            background-image: url('imagenes/hero-background-office.png');
-            background-size: cover;
-            background-position: center;
-            color: white; /* Asegurarse de que el texto sea legible */
-        }
-        
-        .hero-section h1, .hero-section p {
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Sombra para mejorar legibilidad */
-        }
-
-        /* Ajustes para pantallas pequeñas */
-        @media (max-width: 850px) {
-            .main-header .container {
-                flex-direction: column;
-                padding-bottom: 1rem;
-            }
-
-            .main-nav {
-                margin: 1rem 0;
-            }
-        }
-         @media (max-width: 480px) {
-            .logo .logo-text {
-                font-size: 1.2rem;
-            }
-             .main-menu {
-                padding-left: 0;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-        }
-
-        /* === NUEVOS estilos para que 5 tarjetas quepan en pantalla y en móvil se vea 1 en 1 === */
-        .services-section .services-grid {
-            display: grid;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
-            gap: 20px;
-            align-items: stretch;
-        }
-        .service-card {
-            display: flex;
-            flex-direction: column;
-            background: #fff;
-            border: 1px solid #e6e8ec;
-            border-radius: 14px;
-            padding: 16px;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-            transition: transform .2s ease, box-shadow .2s ease;
-            height: 100%;
-        }
-        .service-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-        }
-        .service-card .service-icon {
-            width: 56px;
-            height: 56px;
-            object-fit: contain;
-            margin-bottom: 10px;
-        }
-        .service-card h3 {
-            margin: 0 0 8px;
-            font-size: 1.05rem;
-            line-height: 1.3;
-        }
-        .service-card p {
-            margin: 0 0 12px;
-            color: #444;
-            line-height: 1.55;
-            font-size: .95rem;
-            flex: 1;
-        }
-        .service-card .service-link {
-            align-self: flex-start;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* En móviles (<= 900px), mostramos 1 tarjeta por fila */
-        @media (max-width: 900px) {
-            .services-section .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    
-        /* === Estilos para la sección de equipo === */
-        .team-section {
-            padding: 60px 0;
-            background: #f9f9fb;
-        }
-        .team-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-        }
-        .team-card {
-            background: #fff;
-            border-radius: 14px;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-            text-align: center;
-            padding: 20px;
-            border: 1px solid #e6e8ec;
-        }
-        .team-card img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid #e6e8ec;
-        }
-        .team-card h3 {
-            margin: 0 0 10px;
-            font-size: 1.05rem;
-            font-weight: 600;
-        }
-        .team-card p {
-            margin: 0;
-            font-size: .9rem;
-            color: #555;
-            line-height: 1.5;
-        }
-        @media (max-width: 1000px) {
-            .team-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .team-grid { grid-template-columns: 1fr; }
-        }
-        /* === Estilos adicionales para el footer === */
-        .footer-column h5 {
-            margin-top: 15px;
-            margin-bottom: 8px;
-            color: #fff;
-            font-weight: 700;
-        }
-         .footer-column .contact-block {
-            margin-bottom: 15px;
-        }
-
-    </style>
 </head>
 <body>
 
@@ -211,17 +20,27 @@
                 <img src="imagenes/logo-estudio-gestion.png" alt="Logo Estudio y Gestión">
                 <span class="logo-text">Estudio y Gestión</span>
             </a>
-            <nav class="main-nav">
-                <ul id="main-menu" class="main-menu">
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="#quienes-somos">Quiénes Somos</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-            <a href="https://wa.me/34658866133" class="whatsapp-header-icon" target="_blank" aria-label="Contactar por WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
+            
+            <div class="header-right-group">
+                <nav class="main-nav">
+                    <!-- Botón de hamburguesa para móvil -->
+                    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul id="main-menu" class="main-menu">
+                        <li><a href="index.html" class="active">Inicio</a></li>
+                        <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+    
+                <a href="https://wa.me/34658866133" class="whatsapp-header-icon" target="_blank" aria-label="Contactar por WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -272,64 +91,64 @@
                     </div>
             </div>
         </section>
-<section class="nuria-section">
-  <div class="container">
-    <h2>Asesoramiento Jurídico en las siguientes especialidades</h2>
-    <div class="nuria-grid">
-      
-      <div class="nuria-card">
-        <h3>I. Derecho de Familia</h3>
-        <ul>
-          <li>Separaciones Matrimoniales: De mutuo Acuerdo y Contencioso</li>
-          <li>Divorcios: De Mutuo Acuerdo (Convenio Regulador) y Contencioso</li>
-          <li>Liquidación de la sociedad de gananciales</li>
-          <li>Ejecución de Sentencias para cumplimiento Medidas de Divorcio</li>
-          <li>Procedimiento Declaración de Gastos Extraordinarios de los hijos</li>
-          <li>Modificación de Medidas Definitivas en procesos de Divorcio</li>
-          <li>Régimen de visitas en favor de abuelo a sus nietos</li>
-          <li>Medidas de Protección por ejercicio inadecuado de la patria potestad</li>
-        </ul>
-      </div>
-
-      <div class="nuria-card">
-        <h3>II. Curatela</h3>
-        <ul>
-          <li>Demanda de Jurisdicción Voluntaria sobre Medidas de Apoyo a las personas con discapacidad en el ejercicio de su capacidad jurídica.</li>
-        </ul>
-      </div>
-
-      <div class="nuria-card">
-        <h3>III. Violencia de Género</h3>
-        <ul>
-          <li>Denuncias</li>
-          <li>Orden de Alejamiento</li>
-        </ul>
-      </div>
-
-      <div class="nuria-card">
-        <h3>IV. Derecho Civil</h3>
-        <ul>
-          <li>Reclamaciones de Cantidad</li>
-          <li>División de Cosa común o extinción de pro indivisos</li>
-          <li>Contratos de Arrendamiento</li>
-          <li>Demandas de Desahucio</li>
-          <li>Resolución de contratos</li>
-        </ul>
-      </div>
-
-      <div class="nuria-card">
-        <h3>V. Herencias</h3>
-        <ul>
-          <li>Testamentos</li>
-          <li>Declaración de Herederos Abintestato</li>
-          <li>Adjudicación de herencias</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+        
+        <section class="nuria-section">
+          <div class="container">
+            <h2>Asesoramiento Jurídico en las siguientes especialidades</h2>
+            <div class="nuria-grid">
+              
+              <div class="nuria-card">
+                <h3>I. Derecho de Familia</h3>
+                <ul>
+                  <li>Separaciones Matrimoniales: De mutuo Acuerdo y Contencioso</li>
+                  <li>Divorcios: De Mutuo Acuerdo (Convenio Regulador) y Contencioso</li>
+                  <li>Liquidación de la sociedad de gananciales</li>
+                  <li>Ejecución de Sentencias para cumplimiento Medidas de Divorcio</li>
+                  <li>Procedimiento Declaración de Gastos Extraordinarios de los hijos</li>
+                  <li>Modificación de Medidas Definitivas en procesos de Divorcio</li>
+                  <li>Régimen de visitas en favor de abuelo a sus nietos</li>
+                  <li>Medidas de Protección por ejercicio inadecuado de la patria potestad</li>
+                </ul>
+              </div>
+        
+              <div class="nuria-card">
+                <h3>II. Curatela</h3>
+                <ul>
+                  <li>Demanda de Jurisdicción Voluntaria sobre Medidas de Apoyo a las personas con discapacidad en el ejercicio de su capacidad jurídica.</li>
+                </ul>
+              </div>
+        
+              <div class="nuria-card">
+                <h3>III. Violencia de Género</h3>
+                <ul>
+                  <li>Denuncias</li>
+                  <li>Orden de Alejamiento</li>
+                </ul>
+              </div>
+        
+              <div class="nuria-card">
+                <h3>IV. Derecho Civil</h3>
+                <ul>
+                  <li>Reclamaciones de Cantidad</li>
+                  <li>División de Cosa común o extinción de pro indivisos</li>
+                  <li>Contratos de Arrendamiento</li>
+                  <li>Demandas de Desahucio</li>
+                  <li>Resolución de contratos</li>
+                </ul>
+              </div>
+        
+              <div class="nuria-card">
+                <h3>V. Herencias</h3>
+                <ul>
+                  <li>Testamentos</li>
+                  <li>Declaración de Herederos Abintestato</li>
+                  <li>Adjudicación de herencias</li>
+                </ul>
+              </div>
+        
+            </div>
+          </div>
+        </section>
 
         <section id="quienes-somos" class="why-us-section">
             <div class="container">
@@ -383,6 +202,7 @@
                 </div>
             </div>
         </section>
+
       <section class="final-cta-section">
             <div class="container">
                 <h2>¿Tienes dudas? Hablemos.</h2>
@@ -394,44 +214,13 @@
             </div>
         </section>
     </main>
- <style>
-    /* Añade estos estilos a tu CSS o en la etiqueta <style> del <head> */
-    .main-footer .footer-grid.four-columns {
-        grid-template-columns: repeat(4, 1fr); /* 4 columnas en lugar de 3 */
-    }
-
-    .main-footer .footer-column p {
-        display: flex;
-        align-items: flex-start; /* Alinea icono y texto */
-        gap: 10px; /* Espacio entre icono y texto */
-        margin-bottom: 0.8rem;
-    }
-    
-    .main-footer .footer-column i {
-        margin-top: 4px; /* Centra el icono verticalmente */
-        color: #a0a0a0;
-        width: 15px; /* Ancho fijo para el icono */
-    }
-
-    /* Ajuste para pantallas más pequeñas */
-    @media (max-width: 1000px) {
-        .main-footer .footer-grid.four-columns {
-            grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
-        }
-    }
-    @media (max-width: 600px) {
-        .main-footer .footer-grid.four-columns {
-            grid-template-columns: 1fr; /* 1 columna en móvil */
-        }
-    }
-</style>
 
 <footer class="main-footer">
     <div class="container">
         <div class="footer-grid four-columns">
             <div class="footer-column">
                 <h4>Estudio y Gestión</h4>
-                <p style="align-items: normal; gap: 0;">Asesoría experta en el ámbito legal, fiscal y laboral, comprometida con ofrecerte tranquilidad y soluciones eficaces.</p>
+                <p>Asesoría experta en el ámbito legal, fiscal y laboral, comprometida con ofrecerte tranquilidad y soluciones eficaces.</p>
             </div>
             <div class="footer-column">
                 <h4>Navegación</h4>
@@ -466,46 +255,7 @@
         </div>
     </div>
 </footer>
-<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
 
-<div id="n8n-chat"></div>
-
-<script type="module">
-	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-	createChat({
-		webhookUrl: 'https://chaplicationsn8n-u55269.vm.elestio.app/webhook/b6acca6a-244a-477e-bf46-05580fe2fbd8/chat',
-		webhookConfig: {
-			method: 'POST',
-			headers: {}
-		},
-		target: '#n8n-chat',
-		mode: 'window',
-		chatInputKey: 'chatInput',
-		chatSessionKey: 'sessionId',
-		loadPreviousSession: true,
-		metadata: {},
-		showWelcomeScreen: false,
-		defaultLanguage: 'en',
-		initialMessages: [
-			'Hola! 👋, ¿Cómo te podemos ayudar?'
-		],
-		i18n: {
-			en: {
-				title: 'Estudio y Gestión',
-				subtitle: "Bienvenido",
-				footer: '',
-				getStarted: 'New Conversation',
-				inputPlaceholder: 'Escribe tu consulta...'
-			},
-		},
-		enableStreaming: false,
-	});
-</script>
-
-<script>
-    // Script para actualizar el año actual en el footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-</script>
+<script src="script.js"></script>
 </body>
 </html>

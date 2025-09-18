@@ -45,7 +45,7 @@ body {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: var(--transition-speed);
+    transition: box-shadow var(--transition-speed);
 }
 
 .main-header .container {
@@ -54,10 +54,32 @@ body {
     align-items: center;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    gap: 15px;
+}
+
 .logo img {
     height: 50px;
     width: auto;
     display: block;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    white-space: nowrap;
+}
+
+.header-right-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .main-nav ul {
@@ -95,12 +117,24 @@ body {
     width: 100%;
 }
 
+.whatsapp-header-icon {
+    font-size: 2.2rem;
+    color: #25D366;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-header-icon:hover {
+    transform: scale(1.1);
+}
+
 .mobile-menu-toggle {
     display: none; /* Oculto por defecto en escritorio */
     background: none;
     border: none;
     cursor: pointer;
     z-index: 1001;
+    padding: 10px;
+    margin: -10px; /* Compensa el padding para no afectar el layout */
 }
 
 .mobile-menu-toggle span {
@@ -109,13 +143,23 @@ body {
     height: 3px;
     background-color: var(--dark-grey);
     margin: 5px 0;
-    transition: var(--transition-speed);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu-toggle.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.mobile-menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+}
+.mobile-menu-toggle.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 
 /* --- Sección Héroe --- */
 .hero-section {
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1920x1080/E0E0E0/A0A0A0?text=Oficina+Moderna');
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imagenes/hero-background-office.png');
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -206,7 +250,7 @@ h3 {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(5, 1fr); /* CORREGIDO: 5 columnas en escritorio */
     gap: 30px;
 }
 
@@ -217,6 +261,8 @@ h3 {
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
 }
 
 .service-card:hover {
@@ -225,10 +271,14 @@ h3 {
 }
 
 .service-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 20px;
-    opacity: 0.8;
+    width: 72px;
+    height: 72px;
+    margin: 8px auto 20px;
+    object-fit: contain;
+}
+
+.service-card p {
+    flex-grow: 1; /* Empuja el link hacia abajo */
 }
 
 .service-link {
@@ -276,6 +326,90 @@ h3 {
     left: 0;
     font-weight: bold;
 }
+
+/* --- Sección de Equipo --- */
+.team-section {
+    padding: 60px 0;
+    background: #f9f9fb;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.team-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #e6e8ec;
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #e6e8ec;
+}
+
+.team-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.team-card p {
+    margin: 0;
+    font-size: .9rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* --- Sección Asesoramiento Jurídico --- */
+.nuria-section {
+  padding: 60px 0;
+  background: #f9f9fb;
+}
+
+.nuria-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* CORREGIDO: 1 columna para la vista vertical */
+  gap: 20px;
+}
+
+.nuria-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  border: 1px solid #e6e8ec;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.nuria-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.nuria-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.nuria-card ul {
+  font-size: .9rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 18px;
+}
+
 
 /* --- Sección CTA Final --- */
 .final-cta-section {
@@ -327,6 +461,10 @@ h3 {
     margin-bottom: 40px;
 }
 
+.footer-grid.four-columns {
+    grid-template-columns: repeat(4, 1fr);
+}
+
 .footer-column h4 {
     font-family: var(--font-heading);
     color: var(--white);
@@ -353,6 +491,19 @@ h3 {
     text-decoration: underline;
 }
 
+.footer-column p {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 0.8rem;
+}
+
+.footer-column i {
+    margin-top: 4px;
+    color: #a0a0a0;
+    width: 15px;
+}
+
 .footer-bottom {
     border-top: 1px solid #444;
     padding-top: 20px;
@@ -364,164 +515,76 @@ h3 {
     margin-bottom: 5px;
 }
 
-
-/* --- Página de Contacto y Privacidad --- */
-.contact-section, .privacy-policy-section {
-    padding-top: 120px;
-    padding-bottom: 80px;
-    min-height: 70vh;
-}
-
-.contact-section .subtitle, .privacy-policy-section .subtitle {
-    text-align: center;
-    max-width: 600px;
-    margin: -40px auto 40px;
-    font-size: 1.1rem;
-    color: var(--medium-grey);
-}
-
-.contact-form-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: var(--white);
-    padding: 0;
-    border-radius: var(--border-radius);
-}
-
-.privacy-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.privacy-content h3 {
-    margin-top: 40px;
-}
-.privacy-content ul {
-    margin-top: 10px;
-    padding-left: 20px;
-}
-
 /* --- Responsive Design --- */
+@media (max-width: 1100px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid.four-columns { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 768px) {
+    .logo-text { font-size: 1.2rem; }
+
     .main-nav {
         position: relative;
     }
+
     .main-menu {
-        display: none;
+        display: none; /* Oculto por defecto */
         flex-direction: column;
         position: absolute;
-        top: 100%;
+        top: calc(100% + 15px); /* Debajo de la cabecera */
         right: 0;
         background-color: var(--white);
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        border-radius: var(--border-radius);
         width: 250px;
         padding: 20px;
         gap: 15px;
     }
+
     .main-menu.active {
         display: flex;
     }
+
     .mobile-menu-toggle {
         display: block;
     }
 
-    .hero-section h1 {
-        font-size: 2.5rem;
+    .main-nav ul {
+        display: none; /* Oculta el menú de escritorio */
     }
-    .hero-section p {
-        font-size: 1.1rem;
+    .main-nav .main-menu {
+        display: none; /* Asegura que la lista <ul> esté oculta */
     }
-    h2 {
-        font-size: 2rem;
+    .main-nav .main-menu.active {
+        display: flex; /* Muestra la lista <ul> cuando está activa */
     }
+
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-section h1 { font-size: 2.5rem; }
+    .hero-section p { font-size: 1.1rem; }
+    h2 { font-size: 2rem; }
+
     .why-us-content {
         grid-template-columns: 1fr;
     }
     .why-us-image {
         margin-bottom: 30px;
     }
+
     .footer-grid {
         text-align: center;
     }
 }
-/* Centrar y agrandar iconos de las tarjetas */
-.service-card {
-  text-align: center;              /* centra título y texto también */
-}
-
-.service-card .service-icon {
-  display: block;                  /* permite centrar con margin auto */
-  width: 72px;                     /* tamaño más grande en desktop */
-  height: 72px;
-  margin: 8px auto 12px;           /* centrado horizontal */
-  object-fit: contain;             /* evita deformaciones */
-}
-
-/* Opcional: títulos un pelín más grandes */
-.service-card h3 {
-  font-size: 1.15rem;
-}
-
-/* En móvil, ligeramente más pequeños para equilibrio visual */
-@media (max-width: 900px) {
-  .service-card .service-icon {
-    width: 64px;
-    height: 64px;
-  }
-}
-/* === NUEVAS tarjetas de asesoramiento jurídico === */
-.nuria-section {
-  padding: 60px 0;
-  background: #f9f9fb;
-}
-
-.nuria-section h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-}
-
-.nuria-grid {
-  display: grid;
-  grid-template-columns: 1fr; /* <--- LÍNEA MODIFICADA */
-  gap: 20px;
-}
-
-.nuria-card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-  border: 1px solid #e6e8ec;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.nuria-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-}
-
-.nuria-card h3 {
-  margin: 0 0 10px;
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
-.nuria-card p, 
-.nuria-card ul {
-  font-size: .9rem;
-  color: #555;
-  line-height: 1.5;
-  margin: 0;
-  padding-left: 18px;
-}
-
-@media (max-width: 1100px) {
-  .nuria-grid { grid-template-columns: repeat(2, 1fr); }
-}
 
 @media (max-width: 600px) {
-  .nuria-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr; }
+    .footer-grid.four-columns { grid-template-columns: 1fr; }
+    .nuria-grid { grid-template-columns: 1fr; }
 }
+
