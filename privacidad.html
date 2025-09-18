@@ -124,6 +124,42 @@
         </div>
     </div>
 </footer>
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+
+<div id="n8n-chat"></div>
+
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'https://chaplicationsn8n-u55269.vm.elestio.app/webhook/b6acca6a-244a-477e-bf46-05580fe2fbd8/chat',
+		webhookConfig: {
+			method: 'POST',
+			headers: {}
+		},
+		target: '#n8n-chat',
+		mode: 'window',
+		chatInputKey: 'chatInput',
+		chatSessionKey: 'sessionId',
+		loadPreviousSession: true,
+		metadata: {},
+		showWelcomeScreen: false,
+		defaultLanguage: 'en',
+		initialMessages: [
+			'Hola! 👋, ¿Cómo te podemos ayudar?'
+		],
+		i18n: {
+			en: {
+				title: 'Estudio y Gestión',
+				subtitle: "Bienvenido",
+				footer: '',
+				getStarted: 'New Conversation',
+				inputPlaceholder: 'Escribe tu consulta...'
+			},
+		},
+		enableStreaming: false,
+	});
+</script>
 
 <script src="script.js"></script>
 </body>
