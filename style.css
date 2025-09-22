@@ -252,19 +252,19 @@ h3 {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* CORREGIDO: 5 columnas en escritorio */
     gap: 30px;
+    align-items: stretch; /* las celdas igualan altura */
 }
 
 .service-card {
     background-color: var(--white);
-    width: 120px;
-    height: 120px;
-    padding: 30px;
+    padding: 20px;
     border-radius: var(--border-radius);
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     display: flex;
     flex-direction: column;c;
+    min-height: 260px;          /* uniformidad vertical */
 
 }
 
@@ -590,6 +590,7 @@ h3 {
     .footer-grid.four-columns { grid-template-columns: 1fr; }
     .nuria-grid { grid-template-columns: 1fr; }
 }
+
 
 
 
