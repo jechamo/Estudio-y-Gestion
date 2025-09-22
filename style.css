@@ -255,16 +255,13 @@ h3 {
 }
 
 .service-card {
-    background-color: var(--white);
-    width: 120px;
-    height: 120px;
-    padding: 30px;
-    border-radius: var(--border-radius);
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-    display: flex;
-    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #e6e8ec;
+
 }
 
 .service-card:hover {
@@ -589,6 +586,7 @@ h3 {
     .footer-grid.four-columns { grid-template-columns: 1fr; }
     .nuria-grid { grid-template-columns: 1fr; }
 }
+
 
 
 
