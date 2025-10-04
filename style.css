@@ -250,7 +250,7 @@ h3 {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* CORREGIDO: 5 columnas en escritorio */
+    grid-template-columns: repeat(6, 1fr); /* CORREGIDO: 5 columnas en escritorio */
     gap: 30px;
     align-items: stretch; /* las celdas igualan altura */
 }
@@ -591,6 +591,7 @@ h3 {
     .footer-grid.four-columns { grid-template-columns: 1fr; }
     .nuria-grid { grid-template-columns: 1fr; }
 }
+
 
 
 
