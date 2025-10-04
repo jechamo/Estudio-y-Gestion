@@ -250,9 +250,10 @@ h3 {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* CORREGIDO: 5 columnas en escritorio */
+    /* Cambiado de 6 a 3 columnas para crear una cuadrícula de 3x2 */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
-    align-items: stretch; /* las celdas igualan altura */
+    align-items: stretch; 
 }
 
 .service-card {
@@ -591,6 +592,7 @@ h3 {
     .footer-grid.four-columns { grid-template-columns: 1fr; }
     .nuria-grid { grid-template-columns: 1fr; }
 }
+
 
 
 
