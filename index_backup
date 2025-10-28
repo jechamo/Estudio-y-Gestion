@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio y Gestión - Asesoría Legal, Fiscal y Laboral</title>
+    <meta name="description" content="Asesoría legal, fiscal, contable y laboral para particulares, autónomos y empresas. Soluciones claras y eficientes para tu tranquilidad.">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="https://placehold.co/32x32/C00000/FFFFFF?text=eg" type="image/png">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="imagenes/logo-estudio-gestion.png" alt="Logo Estudio y Gestión">
+                <span class="logo-text">Estudio y Gestión</span>
+            </a>
+            
+            <div class="header-right-group">
+                <nav class="main-nav">
+                    <!-- Botón de hamburguesa para móvil -->
+                    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul id="main-menu" class="main-menu">
+                        <li><a href="index.html" class="active">Inicio</a></li>
+                        <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+    
+                <a href="https://wa.me/34658866133" class="whatsapp-header-icon" target="_blank" aria-label="Contactar por WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>TU CONFIANZA, NUESTRO RETO</h1>
+                <p>Asesoría legal, fiscal, contable y laboral para particulares, autónomos y empresas. Soluciones claras y eficientes para tu tranquilidad.</p>
+                <a href="contacto.html" class="cta-button">Reserva tu Cita Ahora</a>
+                <a href="https://wa.me/34658866133" class="whatsapp-link" target="_blank">O contáctanos por WhatsApp</a>
+            </div>
+        </section>
+
+        <section id="servicios" class="services-section">
+            <div class="container">
+                <h2>Nuestras Áreas de Especialización</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="imagenes/icono-herencias.png" alt="Icono Herencias y Donaciones" class="service-icon">
+                        <h3>Herencias y Donaciones</h3>
+                        <p>Gestión integral de herencias, abintestatos, testamentos y donaciones. Tramitación de impuestos, planificación fiscal. Acticípate al posible palo fiscal</p>
+                        <a href="contacto.html" class="service-link">Saber más</a>
+                    </div>
+                    <div class="service-card">
+                        <img src="imagenes/icono-fiscal.png" alt="Icono Asesoramiento Fiscal" class="service-icon">
+                        <h3>Asesoramiento Fiscal</h3>
+                        <p>Optimización fiscal y presentación de impuestos (IRPF, IVA, Sociedades) para particulares y empresas. Declaraciones de renta.</p>
+                        <a href="contacto.html" class="service-link">Saber más</a>
+                    </div>
+                    <div class="service-card">
+                        <img src="imagenes/icono-contabilidad.png" alt="Icono Contabilidad" class="service-icon">
+                        <h3>Asesoramiento Contable</h3>
+                        <p>Llevamos la contabilidad de tu negocio, libros contables, balances y cuentas anuales con total transparencia. Adaptación a la nueva normativa de facturación -Verifactu-</p>
+                        <a href="contacto.html" class="service-link">Saber más</a>
+                    </div>
+                    <div class="service-card">
+                         <img src="imagenes/icono-laboral.png" alt="Icono Asesoría Laboral" class="service-icon">
+                        <h3>Asesoramiento Laboral</h3>
+                        <p>Gestionamos contratos, nóminas, despidos y trámites con la Seguridad Social para cumplir la normativa.</p>
+                        <a href="contacto.html" class="service-link">Saber más</a>
+                    </div>
+                    <div class="service-card">
+                        <img src="imagenes/asesoria-juridica.png" alt="Icono Asesoramiento Jurídico" class="service-icon">
+                        <h3>Asesoramiento Jurídico</h3>
+                        <p>Asesoramiento jurídico especializado en Derecho de familia, separaciones , divorcios, liquidación sociedad de gananciales, curatela, violencia de género, reclamaciones de cantidad, contratos de arrendamiento, división de la cosa común y resolución de contratos y demandas de deshaucio.</p>
+                        <a href="contacto.html" class="service-link">Saber más</a>
+                    </div>
+					<div class="service-card">
+                        <img src="imagenes/servicio-economista.png" alt="Icono Asesoramiento Jurídico" class="service-icon">
+                        <h3>Servicios de economista</h3>
+                        <p>Acompañamiento financiero de tu empresa, control de costes, control de tesorería, valoraciones de empresa y ayuda en toma de desiciones.</p>
+                        <a href="contacto.html" class="service-link">Saber más</a>
+                    </div>
+                    </div>
+            </div>
+        </section>
+        
+        <section id="quienes-somos" class="why-us-section">
+            <div class="container">
+                <div class="why-us-content">
+                    <div class="why-us-image">
+                        <img src="imagenes/imagen-confianza.png" alt="Un asesor y un cliente dándose la mano en señal de confianza">
+                    </div>
+                    <div class="why-us-text">
+                        <h3>Más de 30 Años a tu Lado</h3>
+                        <p>Somos un equipo de profesionales con una larga trayectoria ofreciendo soluciones integrales. La confianza y la transparencia son los pilares de nuestra relación con cada cliente.</p>
+                        <ul>
+                            <li><strong>Confianza:</strong> Actuamos con honestidad y responsabilidad.</li>
+                            <li><strong>Compromiso:</strong> Nos implicamos al 100% en cada caso.</li>
+                            <li><strong>Transparencia:</strong> Explicamos todo con claridad, sin sorpresas.</li>
+                            <li><strong>Cercanía:</strong> Mantenemos una comunicación directa y accesible.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2>Nuestro Equipo</h2>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <img src="imagenes/margarita-rodriguez.jpeg" alt="Margarita Rodríguez Dueñas">
+                        <h3>Margarita Rodríguez</h3>
+                        <p>Responsable de contabilidad, coordinación y organización interna.</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="imagenes/enrique-guijarro2.png" alt="Enrique Guijarro Adánez">
+                        <h3>Enrique Guijarro</h3>
+						<h4>COL. Nº 20.507 I.C.E</h4>
+                        <p>Experto en dirección economico-financiera, orienta a empresas y particulares en planificación y optimización tributaria. Asesor fiscal. Experto en herencias y sucesiones.</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="imagenes/nuria-chamorro.png" alt="Nuria Chamorro Alonso">
+                        <h3>Nuria Chamorro</h3>
+						<h4>COL. Nº 40.955 I.C.A.M</h4>
+                        <p>Abogada con amplia experiencia en Derecho de Familia y Derecho Procesal Civil. Promotora de importantes avances en la gestión de conflictos y en el tratamiento legal de la sustracción internacional de menores.</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="imagenes/maria-rodriguez.png" alt="María Rodríguez Dueñas">
+                        <h3>María Rodríguez</h3>
+                        <p>Responsable de atención al cliente y gestión documental.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <section class="final-cta-section">
+            <div class="container">
+                <h2>¿Tienes dudas? Hablemos.</h2>
+                <p>Estamos aquí para ayudarte a encontrar la mejor solución para tus necesidades.</p>
+                <div class="cta-buttons">
+                    <a href="contacto.html" class="cta-button">Contactar</a>
+                    <a href="tel:+34911101953" class="cta-button secondary">Llamar Ahora</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid four-columns">
+            <div class="footer-column">
+                <h4>Estudio y Gestión</h4>
+                <p>Asesoría experta en el ámbito legal, fiscal y laboral, comprometida con ofrecerte tranquilidad y soluciones eficaces.</p>
+                <p><i class="fas fa-map-marker-alt"></i> C/ Manuel Azaña, 2 1ºC<br>28805 - Alcalá de Henares</p>
+			</div>
+            <div class="footer-column">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Asesoramiento general áreas</h4>
+                <p><i class="fas fa-user-tie"></i>Enrique Guijarro COL. Nº 20.507 I.C.E</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+34911101953">911 101 953</a> (Despacho)</p>
+                <p><i class="fas fa-mobile-alt"></i> <a href="tel:+34658866133">658 86 61 33</a> (Enrique)</p>
+                <p><i class="fas fa-mobile-alt"></i> <a href="tel:+34629584012">629 58 40 12</a> (Margarita)</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:enriqueguijarro@cemad.es">enriqueguijarro@cemad.es</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:administracion@estudioygestion.com">administracion@estudioygestion.com</a></p>
+            </div>
+            <div class="footer-column">
+                <h4>Asesoramiento Jurídico</h4>
+                <p><i class="fas fa-user-tie"></i>Lda. Nuria Chamorro  COL. Nº 40.955 I.C.A.M</p>
+			</div>	
+		</div>	
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> Estudio y Gestión. Todos los derechos reservados.</p>
+            <p><a href="privacidad.html">Política de Privacidad</a></p>
+        </div>
+    </div>
+</footer>
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+
+<div id="n8n-chat"></div>
+
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'https://chaplicationsn8n-u55269.vm.elestio.app/webhook/b6acca6a-244a-477e-bf46-05580fe2fbd8/chat',
+		webhookConfig: {
+			method: 'POST',
+			headers: {}
+		},
+		target: '#n8n-chat',
+		mode: 'window',
+		chatInputKey: 'chatInput',
+		chatSessionKey: 'sessionId',
+		loadPreviousSession: true,
+		metadata: {},
+		showWelcomeScreen: false,
+		defaultLanguage: 'en',
+		initialMessages: [
+			'Hola! 👋, ¿Cómo te podemos ayudar?'
+		],
+		i18n: {
+			en: {
+				title: 'Estudio y Gestión',
+				subtitle: "Bienvenido",
+				footer: '',
+				getStarted: 'New Conversation',
+				inputPlaceholder: 'Escribe tu consulta...'
+			},
+		},
+		enableStreaming: false,
+	});
+</script>
+
+
+<script src="script.js"></script>
+</body>
+</html>
