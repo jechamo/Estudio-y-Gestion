@@ -61,24 +61,5 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-// 3. Lógica del Popup de Calendly
-// Usamos window.onload para asegurarnos de que el script externo de Calendly
-// se haya cargado completamente antes de intentar usarlo.
-window.onload = function() {
-    // Comprueba si el objeto 'Calendly' existe en la ventana global
-    if (typeof Calendly !== 'undefined') {
-        Calendly.initPopupWidget({
-            url: 'https://calendly.com/jchamorrorodriguez',
-            text: 'Reservar Cita',
-            color: '#C00000', // Color primario de tu marca
-            textColor: '#FFFFFF',
-            branding: true
-        });
-    } else {
-        // Muestra un error en la consola si el script de Calendly no se carga
-        console.error('El script de Calendly no se ha cargado correctamente.');
-    }
-};
 
 });
-
