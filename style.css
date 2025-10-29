@@ -592,3 +592,17 @@ h3 {
     .footer-grid.four-columns { grid-template-columns: 1fr; }
     .nuria-grid { grid-template-columns: 1fr; }
 }
+/* --- Calendly Section --- */
+.calendly-section {
+  background: var(--light-grey);
+  padding: 80px 0;
+}
+.calendly-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.calendly-inline-widget {
+  width: 100%;
+}
+@media (max-width: 600px) {
+  .calendly-section { padding: 60px 0; }
