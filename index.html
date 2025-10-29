@@ -12,6 +12,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="https://placehold.co/32x32/C00000/FFFFFF?text=eg" type="image/png">
 </head>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script>
+  // Inicialización robusta: reintenta hasta que el objeto Calendly esté cargado
+  document.addEventListener('DOMContentLoaded', function () {
+    function bootCalendly() {
+      var el = document.getElementById('calendly-container');
+      if (window.Calendly && el) {
+        Calendly.initInlineWidget({
+          url: 'https://calendly.com/jchamorrorodriguez',
+          parentElement: el
+        });
+      } else {
+        setTimeout(bootCalendly, 120);
+      }
+    }
+    bootCalendly();
+  });
+</script>
+<!-- Tu script existente debajo -->
+<script src="script.js"></script>
 <body>
 
     <header class="main-header">
@@ -149,25 +169,23 @@
         </section>
 
        <!-- Nueva sección Calendly -->
-       <section id="reserva-cita" class="calendly-section">
-        <div class="container">
-         <h2>Reserva tu cita</h2>
-          <div
-        	class="calendly-inline-widget"
-       		data-url="https://calendly.com/jchamorrorodriguez"
-        	style="min-width:320px;height:740px;"
-        	aria-label="Calendly - Reserva tu cita"
-     	 ></div>
-      	<noscript>
-        	<p>
-          		Para reservar tu cita visita:
-          		<a href="https://calendly.com/jchamorrorodriguez" target="_blank" rel="noopener">
-            		calendly.com/jchamorrorodriguez
-          		</a>
-        	</p>
-      	</noscript>
-   	 </div>
-  	</section>
+	   <section id="reserva-cita" class="calendly-section">
+  		<div class="container">
+   		<h2>Reserva tu cita</h2>
+
+    	<!-- Contenedor explícito para inicializar por JS -->
+   		 <div id="calendly-container" style="min-width:320px; height:740px;"></div>
+
+   		 <noscript>
+     	 <p>
+      	  Para reservar tu cita visita:
+       	 <a href="https://calendly.com/jchamorrorodriguez" target="_blank" rel="noopener">
+       	   calendly.com/jchamorrorodriguez
+      	  </a>
+    	  </p>
+    	</noscript>
+ 	 </div>
+	</section>
 		
       <section class="final-cta-section">
             <div class="container">
