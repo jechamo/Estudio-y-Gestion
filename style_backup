@@ -1,0 +1,594 @@
+/* --- Reseteo Básico y Variables --- */
+:root {
+    --primary-color: #C00000; /* Rojo Corporativo */
+    --dark-grey: #212529;
+    --medium-grey: #6c757d;
+    --light-grey: #F8F9FA;
+    --white: #FFFFFF;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
+    --container-width: 1140px;
+    --border-radius: 8px;
+    --transition-speed: 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--dark-grey);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Cabecera y Navegación --- */
+.main-header {
+    background-color: var(--white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: box-shadow var(--transition-speed);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    gap: 15px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    white-space: nowrap;
+}
+
+.header-right-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--dark-grey);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+    transition: color var(--transition-speed);
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed);
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--primary-color);
+}
+
+.main-nav a:hover::after, .main-nav a.active::after {
+    width: 100%;
+}
+
+.whatsapp-header-icon {
+    font-size: 2.2rem;
+    color: #25D366;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-header-icon:hover {
+    transform: scale(1.1);
+}
+
+.mobile-menu-toggle {
+    display: none; /* Oculto por defecto en escritorio */
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+    margin: -10px; /* Compensa el padding para no afectar el layout */
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-grey);
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu-toggle.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.mobile-menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+}
+.mobile-menu-toggle.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* --- Sección Héroe --- */
+.hero-section {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imagenes/hero-background-office.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding: 150px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.hero-section h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.cta-button:hover {
+    background-color: #a00000;
+    transform: translateY(-3px);
+}
+
+.whatsapp-link {
+    display: block;
+    margin-top: 20px;
+    color: var(--white);
+    text-decoration: underline;
+    transition: color var(--transition-speed);
+}
+
+.whatsapp-link:hover {
+    color: #ddd;
+}
+
+/* --- Secciones Generales --- */
+section {
+    padding: 80px 0;
+}
+
+h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* --- Sección de Servicios --- */
+.services-section {
+    background-color: var(--light-grey);
+}
+
+.services-grid {
+    display: grid;
+    /* Cambiado de 6 a 3 columnas para crear una cuadrícula de 3x2 */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    align-items: stretch; 
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+    width: 72px;
+    height: 72px;
+    margin: 8px auto 20px;
+    object-fit: contain;
+}
+
+.service-card p {
+    flex-grow: 1; /* Empuja el link hacia abajo */
+}
+
+
+/* Esta regla ya la tienes y está bien */
+.service-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.service-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Sección "Por Qué Elegirnos" --- */
+.why-us-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.why-us-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+.why-us-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.why-us-text li {
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.why-us-text li::before {
+    content: '✔';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* --- Sección de Equipo --- */
+.team-section {
+    padding: 60px 0;
+    background: #f9f9fb;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.team-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #e6e8ec;
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #e6e8ec;
+}
+
+.team-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.team-card p {
+    margin: 0;
+    font-size: .9rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* --- Sección Asesoramiento Jurídico --- */
+.nuria-section {
+  padding: 60px 0;
+  background: #f9f9fb;
+}
+
+.nuria-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* CORREGIDO: 1 columna para la vista vertical */
+  gap: 20px;
+}
+
+.nuria-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  border: 1px solid #e6e8ec;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.nuria-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.nuria-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.nuria-card ul {
+  font-size: .9rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 18px;
+}
+
+
+/* --- Sección CTA Final --- */
+.final-cta-section {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+}
+
+.final-cta-section h2 {
+    color: var(--white);
+}
+
+.final-cta-section h2::after {
+    background-color: var(--white);
+}
+
+.final-cta-section p {
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-button.secondary {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--white);
+}
+.cta-button.secondary:hover {
+    background-color: transparent;
+    color: var(--white);
+}
+
+/* --- Pie de Página --- */
+.main-footer {
+    background-color: var(--dark-grey);
+    color: #ccc;
+    padding: 60px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-grid.four-columns {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.footer-column h4 {
+    font-family: var(--font-heading);
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+.footer-column a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.footer-column p {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 0.8rem;
+}
+
+.footer-column i {
+    margin-top: 4px;
+    color: #a0a0a0;
+    width: 15px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin-bottom: 5px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1100px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid.four-columns { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .logo-text { font-size: 1.2rem; }
+
+    .main-nav {
+        position: relative;
+    }
+
+    .main-menu {
+        display: none; /* Oculto por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: calc(100% + 15px); /* Debajo de la cabecera */
+        right: 0;
+        background-color: var(--white);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        border-radius: var(--border-radius);
+        width: 250px;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .main-menu.active {
+        display: flex;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .main-nav ul {
+        display: none; /* Oculta el menú de escritorio */
+    }
+    .main-nav .main-menu {
+        display: none; /* Asegura que la lista <ul> esté oculta */
+    }
+    .main-nav .main-menu.active {
+        display: flex; /* Muestra la lista <ul> cuando está activa */
+    }
+
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-section h1 { font-size: 2.5rem; }
+    .hero-section p { font-size: 1.1rem; }
+    h2 { font-size: 2rem; }
+
+    .why-us-content {
+        grid-template-columns: 1fr;
+    }
+    .why-us-image {
+        margin-bottom: 30px;
+    }
+
+    .footer-grid {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr; }
+    .footer-grid.four-columns { grid-template-columns: 1fr; }
+    .nuria-grid { grid-template-columns: 1fr; }
+}
