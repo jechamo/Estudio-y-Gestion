@@ -1,0 +1,60 @@
+name: Deploy to IONOS via SFTP
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ionos-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy production site
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate IONOS secrets
+        env:
+          IONOS_SFTP_HOST: ${{ secrets.IONOS_SFTP_HOST }}
+          IONOS_SFTP_USER: ${{ secrets.IONOS_SFTP_USER }}
+          IONOS_SFTP_PASSWORD: ${{ secrets.IONOS_SFTP_PASSWORD }}
+          IONOS_SFTP_PORT: ${{ secrets.IONOS_SFTP_PORT }}
+        run: |
+          test -n "$IONOS_SFTP_HOST" || (echo "Missing IONOS_SFTP_HOST" && exit 1)
+          test -n "$IONOS_SFTP_USER" || (echo "Missing IONOS_SFTP_USER" && exit 1)
+          test -n "$IONOS_SFTP_PASSWORD" || (echo "Missing IONOS_SFTP_PASSWORD" && exit 1)
+          test -n "$IONOS_SFTP_PORT" || (echo "Missing IONOS_SFTP_PORT" && exit 1)
+
+      - name: Install lftp
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
+      - name: Upload site to IONOS
+        env:
+          IONOS_SFTP_HOST: ${{ secrets.IONOS_SFTP_HOST }}
+          IONOS_SFTP_USER: ${{ secrets.IONOS_SFTP_USER }}
+          IONOS_SFTP_PASSWORD: ${{ secrets.IONOS_SFTP_PASSWORD }}
+          IONOS_SFTP_PORT: ${{ secrets.IONOS_SFTP_PORT }}
+        run: |
+          lftp -u "$IONOS_SFTP_USER","$IONOS_SFTP_PASSWORD" -p "$IONOS_SFTP_PORT" "sftp://$IONOS_SFTP_HOST" <<'EOF'
+          set net:max-retries 2
+          set net:timeout 20
+          set sftp:auto-confirm yes
+          mirror --reverse --verbose \
+            --exclude-glob ".git*" \
+            --exclude-glob "README.md" \
+            --exclude-glob "*_backup*" \
+            ./ /
+          bye
+          EOF
