@@ -703,7 +703,7 @@ h3 {
   margin-top: 20px;
 }
 
-.qr-download-btn {
+.outline-btn {
   display: inline-block;
   background-color: var(--white);
   color: var(--primary-color);
@@ -717,7 +717,7 @@ h3 {
   transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
-.qr-download-btn:hover {
+.outline-btn:hover {
   background-color: var(--primary-color);
   color: var(--white);
 }
@@ -749,4 +749,55 @@ h3 {
   .main-footer {
     display: none;
   }
+}
+
+/* --- Redes y perfiles externos --- */
+.footer-social {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #ccc;
+  font-size: 1.1rem;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.footer-social a:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footer-social i {
+  margin-top: 0;
+  width: auto;
+  color: inherit;
+}
+
+/* Bloque de ubicación de la página de contacto */
+.location-block {
+  max-width: 700px;
+  margin: 50px auto 0;
+  text-align: center;
+}
+
+.location-block h3 {
+  margin-bottom: 10px;
+}
+
+.location-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
 }
