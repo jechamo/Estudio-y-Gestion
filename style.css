@@ -516,6 +516,16 @@ h3 {
     font-size: 0.9rem;
 }
 
+.footer-bottom a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
 .footer-bottom p {
     margin-bottom: 5px;
 }
@@ -643,6 +653,15 @@ h3 {
   position: relative;
   padding-left: 28px;
   margin-bottom: 12px;
+}
+
+.legal-content ol {
+  margin: 0 0 1rem 1.2rem;
+}
+
+.legal-content ol li {
+  margin-bottom: 12px;
+  padding-left: 8px;
 }
 
 .legal-content ul li::before {
